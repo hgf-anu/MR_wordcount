@@ -13,11 +13,10 @@ import java.io.IOException;
 public class WcReducer extends Reducer<Text,IntWritable,Text,IntWritable> {
 
     private IntWritable total = new IntWritable();
-    private Text key = new Text();
 
     /**
      * mapreduce神奇的地方:第一个参数和第二个参数是一组k-v值,按key分组
-     *
+     * 核心问题:(key,1)=>(key,Iterable)
      * @param key
      * @param values
      * @param context
